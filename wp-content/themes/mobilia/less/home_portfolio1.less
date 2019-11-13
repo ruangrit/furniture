@@ -1,0 +1,676 @@
+
+//Header
+
+.header-container {
+	&.header-portfolio {
+		border-bottom: 3px double @bordercolor;
+		display: block;
+		.logo {
+			position: relative;
+
+			a {
+				padding-top: 18px;
+				padding-bottom: 18px;
+			}
+		}
+		.content-header {
+			padding: 0;
+			> .vc_column-inner > .wpb_wrapper {
+				border-left: 1px solid @bordercolor;
+				padding: 30px 0 31px 15px;
+			}
+			.vc_wp_custommenu:before {
+				font-size: 16px;
+			}
+		}
+		.header {
+			.horizontal-menu {
+				#mega_main_menu_first {
+					& > .menu_holder {
+						.menu_inner {
+							& > ul {
+								text-align: right;
+								& > li {
+									& > a.item_link {
+										padding: 29px 6px 28px;
+										.link_text {
+											padding: 0 15px;
+											border-radius: 3px;
+											&:after {
+												margin: 0 0 0 5px;
+												color: @primarycolor;
+											}
+										}
+									}
+									&:hover, &.current-menu-ancestor, &.current-menu-item {
+										& > a.item_link {
+											.link_text {
+												background: @primarycolor;
+												color: #fff;
+												&:after {
+													color: #fff;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.main-container {
+	.page-title {
+		text-align: center;
+		h1 {
+			font-size: 40px;
+			font-weight: 400;
+		}
+	}
+	.portfolio1-static1 {
+		h2 {
+			font-size: 30px;
+			font-weight: 400;
+			strong {
+				font-weight: 700;
+			}
+		}
+		p {
+			color: @greycolor;
+			font-size: 16px;
+			font-style: italic;
+		}
+		.banner-content {
+			position: relative; 
+			.more-info {
+				border: 2px solid #4d4d55;
+				border-radius: 3px;
+				color: #4d4d55;
+				display: block;
+				line-height: 50px;
+				position: absolute;
+				padding: 0 35px;
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 700;
+				text-transform: uppercase;
+				top: 50%;
+				right: 0;
+				margin-top: -27px;
+				&:after {
+					display: inline-block;
+					content: "\f107";
+					font-family: FontAwesome;
+					margin-left: 10px;
+				}
+				&:hover {
+					border-color: @primarycolor;
+					color: @primarycolor;
+				}
+			}
+		}
+	}
+	.portfolio2-static1 {
+		h2 {
+			color: #fff;
+			font-size: 30px;
+			font-weight: 400; 
+		}
+		p {
+			color: #a1a1a1;
+			font-size: 16px;
+			font-style: italic;
+		}
+		.banner-content {
+			position: relative; 
+			.more-info { 	
+				background: @primarycolor;			
+				border-radius: 3px;
+				color: #fff;
+				display: block;
+				line-height: 50px;
+				position: absolute;
+				padding: 0 35px;
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 700;
+				text-transform: uppercase;
+				top: 50%;
+				right: 0;
+				margin-top: -27px;
+				&:after {
+					display: inline-block;
+					content: "\f107";
+					font-family: FontAwesome;
+					margin-left: 10px;
+				}
+				&:hover { 
+					background: @linkcolor;
+				}
+			}
+		}
+	}
+	.tilte-portfolio1 {
+		.wpb_wrapper {
+			& > h3 {
+				color: @headingcolor;
+				font-size: 28px;
+				font-family: @headingfont; 
+				&:before {
+					background: @primarycolor;
+					content: "";
+					display: block;
+					height: 12px;
+					width: 12px; 
+					margin-bottom: 5px;
+				}
+			}
+		} 
+	}
+	.tilte-portfolio2 {
+		text-align: center;
+		.wpb_wrapper {
+			& > h3 {
+				color: @headingcolor;
+				font-size: 24px;
+				font-family: @headingfont; 
+				font-weight: 800;
+				margin-bottom: 20px;
+				&:after {
+					background: @headingcolor;
+					content: "";
+					display: block;
+					width: 48px;
+					height: 3px;
+					margin: 20px auto 0;
+				}
+			}
+		} 
+		p {
+			font-style: italic;
+			font-size: 16px;
+			max-width: 500px;
+			margin: auto;
+		}
+	}
+	.portfolio1-brandlogo {
+		.brands-carousel {
+			border: 1px solid #dedede;
+			&:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			.group {
+				border-right: 1px solid #dedede;
+				width: 33.333%;
+				float: left;
+				&:last-child {
+					border-right: 0;
+				}
+				div {
+					border-bottom: 1px solid #dedede;
+					&:last-child {
+						border-bottom: 0;
+					}
+				}
+			}
+		} 
+	}
+	.portfolio1-testimonial {
+		.testimonials-list {
+			.slick-list {
+				padding: 0;
+				.quote {
+					blockquote {
+						background: #fff;
+						border: 0;
+						padding: 30px;
+						text-align: left;
+						position: relative;
+						margin-bottom: 30px;
+						&:after {
+							content: "";
+							height: 16px;
+							width: 24px;
+							display: block;
+							background: linear-gradient(30deg, transparent 49%, rgba(214, 214, 214, 1) 50%);
+							position: absolute;
+							left: 0;
+							bottom: -16px;
+						}
+						p {
+							font-size: 16px;
+							font-style: italic;
+						}
+					}
+					img {
+						border-radius: 100%;
+						margin-left: 30px;
+						float: left;
+					}
+					.author {
+						margin-left: 150px;
+						text-align: left;
+						display: block;
+						padding-top: 20px;
+						span {
+							display: block;
+							font-weight: 600;
+							font-size: 18px;
+							&.title {
+								font-size: 14px;
+								font-weight: 400;
+							}
+						}
+					}
+				}
+			}
+		}
+		.slick-slider {
+			margin: 0;
+			.slick-dots {
+				text-align: left;
+				li {
+					margin: 0 3px;
+					button {
+						background: none;
+						border-radius: 100%;
+						border: 2px solid #dbdbdb;
+						width: 14px;
+						height: 14px;
+					}
+					&:hover, &.slick-active {
+						button {
+							background: #dbdbdb;
+						}
+					}
+				}
+			}
+		}
+	} 
+
+	.portfolio2-testimonial {
+		.testimonials-list {
+			.slick-list {
+				padding: 0;
+				.quote {
+					text-align: center;
+					padding-top: 65px;
+					background: url(../images/portfolio2_icon_testimonials.png) no-repeat 50% 0;
+					blockquote { 
+						border: 0; 
+						text-align: center;
+						position: relative;
+						margin: 0 auto 20px; 
+						max-width: 1000px;
+
+						p {
+							color: #bbbbbb;
+							font-size: 16px;
+							font-style: italic;
+						}
+					}
+					img {
+						display: none;
+					}
+					.author { 
+						text-align: center;
+						display: block;
+						padding: 20px 0;
+						span {
+							color: #fff;
+							display: inline-block;
+							font-weight: 700;
+							font-size: 14px;
+							text-transform: uppercase;
+							&.title {
+								font-size: 14px;
+								font-weight: 400;
+								text-transform: capitalize;
+								font-style: italic;
+								margin-left: 20px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.slick-slider {
+			margin: 0;
+			.slick-dots { 
+				li {
+					margin: 0 3px;
+					button {
+						background: none;
+						border-radius: 100%;
+						border: 1px solid #a1a1a1;
+						width: 11px;
+						height: 11px;
+					}
+					&:hover, &.slick-active {
+						button {
+							background: @primarycolor;
+							border-color: @primarycolor;
+						}
+					}
+				}
+			}
+		}
+	}
+	.brands-logo {
+		&.portfolio2-brandlogo {
+			float: none;
+		}
+	}
+	.essential-container {
+		.tilte-portfolio1 {
+			position: absolute;
+			top: 60px;
+			z-index: 1;
+		}
+	}
+	.portfolio1-counter {
+		background: @primarycolor;
+		.box {
+			color: #fff;
+			padding: 90px 0;
+			text-align: center;
+
+			&.box2, &.box4 {
+				background: darken(@primarycolor, 10%);
+			}
+		}
+		.mobilia-counter {
+			display: inline-block;
+			text-align: left;
+			position: relative;
+			padding-left: 70px;
+			.counter-image {
+				position: absolute;
+				left: 0;
+			}
+			.counter-info {
+				.counter-number {
+					font-size: 30px;
+					font-weight: 700;
+				}
+				.counter-text {
+					font-size: 12px;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	&.footer-portfolio {
+		// footer title
+		.footer-title h3 {
+			color: #b7b7b7;
+			margin: 23px 0 42px 0;
+		}
+		.contact {
+			ul {
+				li {
+					list-style: none;
+					border-top: 1px solid #38393d;
+					position: relative;
+					padding: 10px 0 10px 30px;
+					i {
+						font-size: 20px;
+						position: absolute;
+						top: 12px;
+						left: 0;
+					}
+				}
+			}
+		}
+		.tagcloud {
+			&:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			a {
+				border-radius: 2px;
+				border: 1px solid #34373d;
+				line-height: 32px;
+				padding: 0 18px;
+				float: left;
+				font-size: 13px !important;
+				margin: 0 7px 10px 0;
+				&:hover {
+					background: #34373d;
+					color: #fff;
+				}
+			}
+		}
+		.widget_wysija_cont {
+			width: 100%;
+			.wysija-paragraph {
+				float: none;
+				margin: 0;
+				padding-right: 45px;
+				position: relative;
+				&:after {
+					content: "\f105";
+					color: #fff;
+					display: block;
+					font-family: FontAwesome;
+					font-size: 18px;
+					line-height: 36px;
+					height: 36px;
+					width: 36px;
+					text-align: center;
+					position: absolute;
+					top: 0;
+					right: 0;
+					pointer-events: none;
+					z-index: 1;
+				}
+				.wysija-input {
+					background: #34373d;
+					border-radius: 3px;
+					border: 0;
+					height: 36px;
+					line-height: 36px;
+					padding: 0 10px;
+					width: 100%;
+				}
+			}
+			.wysija-submit {
+				position: absolute;
+				background: @primarycolor;
+				border: 0;
+				border-radius: 3px;
+				margin: 0;
+				bottom: 0;
+				right: 0;
+				width: 36px;
+				height: 36px;
+				text-indent: -9999px;
+				.transition();
+				&:hover {
+					background: darken(@primarycolor, 10%);
+				}
+			}
+		}
+		.social-icons {
+			border-top: 1px solid #38393d;
+			padding: 25px 0 0;
+			margin: 25px 0 0;
+			float: left;
+			width: 100%;
+			li {
+				display: inline-block;
+				margin-right: 15px;
+				position: relative;
+				a {
+					border-radius: 100%;
+					border: 1px solid #33363c;
+					color: @footerlinkcolor;
+					display: block;
+					font-size: 14px;
+					height: 35px;
+					line-height: 33px;
+					padding: 0;
+					text-align: center;
+					width: 35px;
+					&:hover {
+						background: #34373d;
+						color: #fff;
+					}
+				}
+			}
+		}
+	} 
+	.aiwidgetscss {
+		.imgdisplay {
+			padding: 0; 
+		}
+		.tweettext {
+			color: @footercolor;
+			a {
+				color: @primarycolor;
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+		.tweet_author_name, .tweet_author {
+			a {
+				color: @primarycolor;
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.header-container {
+		&.header-portfolio {
+			.logo:before {
+				display: none;
+			}
+			.header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul {
+				text-align: center;
+			}
+			.content-header > .vc_column-inner > .wpb_wrapper {
+				border: none;
+			}
+			.header {
+				.horizontal-menu {
+					#mega_main_menu_first {
+						& > .menu_holder {
+							.menu_inner {
+								& > ul {
+									& > li {
+										& > a.item_link {
+											padding: 29px 1px 28px;
+											.link_text {
+												padding: 0 10px;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.main-container {
+		.page-title {
+			h1 {
+				font-size: 30px;
+			}
+		}
+		.tilte-portfolio1 {
+			.wpb_wrapper {
+				& > h3 {
+					font-size: 20px;
+				}
+			}
+		}
+		.essential-container {
+			.tilte-portfolio1 {
+				position: static;
+				margin-bottom: 15px;
+			}
+		}
+		.portfolio1-static1, .portfolio2-static1 {
+			h2 {
+				font-size: 20px;
+			}
+			p {
+				font-size: 14px;
+			}
+		}
+	}
+	.footer {
+		&.footer-portfolio {
+			.widget-social {
+				.social-icons {
+					li {
+						margin: 0 10px 3px 0
+					}
+				}
+			}
+		}
+	} 
+}
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+	.footer.footer-portfolio .social-icons li {
+		margin-right: 6px;
+	}
+}
+@media screen and (max-width: 992px) {
+	.header-container {
+		&.header-portfolio {
+			border: 0; 
+			.content-header {
+				top: 2px;
+			}
+			.logo-wrap {
+				border: 0;
+			}
+		}
+	}
+}
+@media screen and (max-width: 767px) {
+	.header-container {
+		&.header-portfolio {
+			.content-header > .vc_column-inner > .wpb_wrapper {
+				padding: 0;
+			}
+		}
+	}
+	.main-container {
+		.page-title {
+			h1 {
+				font-size: 18px;
+			}
+		}
+		.portfolio1-testimonial {
+			margin-bottom: 50px;
+		}
+		.portfolio1-static1, .portfolio2-static1 {
+			.banner-content {
+				.more-info {
+					position: static;
+					margin: 20px 0 0;
+					display: inline-block;
+				}
+			}
+		}
+	}
+}

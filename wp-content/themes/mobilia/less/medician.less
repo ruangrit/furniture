@@ -1,0 +1,781 @@
+
+// header-container
+.header-container{
+	&.header-medician-1 {
+	 	.top-bar {
+	 		font-weight: normal;
+	 	}
+ 		.header-text .wpb_text_column {
+ 			border: none;
+ 			line-height: 55px;
+	 		i {
+		 		border-radius: 100%;
+		 		border: 1px solid #e6e6e6;
+		 		color: @topbarcolor;
+		 		font-size: 14px;
+		 		height: 25px;
+		 		line-height: 25px;
+		 		text-align: center;
+		 		width: 25px;
+	 		}
+	 		a {
+	 			color: @topbarcolor;
+	 			&:hover {
+	 				color: @topbarlinkhovercolor;
+	 			}
+	 		}
+ 		}
+ 		.medician-topbar-right {
+ 			.vc_column-inner {
+ 				> .wpb_wrapper {
+ 					float: right;
+ 					&:after {
+ 						content: "";
+ 						display: table;
+ 						clear: both;
+ 					}
+ 				}
+ 			}
+ 		}
+	 	.vc_wp_search,
+	 	.social-icons {
+	 		float: left;
+	 	}
+	 	ul.social-icons {
+	 		border-left: 1px solid @bordercolor;
+	 		padding: 0 5px;
+	 		li{
+	 			display: inline-block;
+ 			    a{
+ 			    	display: block;
+ 			    	font-size: 16px;
+ 			    	line-height: 55px;
+ 			    	padding: 0 12px;
+ 			    	&:hover{
+ 			    		color: @topbarlinkhovercolor;
+ 			    	}
+ 			    }
+	 		}
+	 	}
+	 	.vc_wp_search {
+	 		border-left: 1px solid @bordercolor;
+	 		border-right: 1px solid @bordercolor;
+	 	}
+	 	.widget_search {
+	 		padding: 0;
+	 		.searchform {
+	 			border: none;
+	 			height: 55px;
+	 			line-height: 55px;
+	 			width: 270px;
+	 		}
+	 		.input_text {
+	 			color: @topbarlinkcolor;
+	 		}
+	 		#blogsearchsubmit {
+	 			background: none;
+	 			color: @topbarlinkcolor;
+	 			font-size: 16px;
+	 			line-height: 55px;
+	 			height: 55px;
+	 			&:hover {
+	 				color: @topbarlinkhovercolor;
+	 			}
+	 		}
+	 	}
+	 	
+	 	.header{
+	 		padding: 0;
+	 		background-image: none;
+	 		.horizontal-menu {
+	 			text-align: right;
+	 		}
+	 	}
+
+	}
+	&.header-medician-2 {
+ 	 	.top-bar {
+ 	 		font-weight: normal;
+ 	 	}
+  		.header-text .wpb_text_column {
+  			border: none;
+  			line-height: 55px;
+ 	 		i {
+ 		 		border-radius: 100%;
+ 		 		border: 1px solid #e6e6e6;
+ 		 		color: @topbarcolor;
+ 		 		font-size: 14px;
+ 		 		height: 25px;
+ 		 		line-height: 25px;
+ 		 		text-align: center;
+ 		 		width: 25px;
+ 	 		}
+ 	 		a {
+ 	 			color: @topbarcolor;
+ 	 			&:hover {
+ 	 				color: @topbarlinkhovercolor;
+ 	 			}
+ 	 		}
+  		}
+  		.medician-topbar-right {
+  			.vc_column-inner {
+  				> .wpb_wrapper {
+  					float: right;
+  					&:after {
+  						content: "";
+  						display: table;
+  						clear: both;
+  					}
+  				}
+  			}
+  		}
+ 	 	.vc_wp_search,
+ 	 	.social-icons {
+ 	 		float: left;
+ 	 	}
+ 	 	ul.social-icons {
+ 	 		border-left: 1px solid #70747c;
+ 	 		padding: 0 5px;
+ 	 		li{
+ 	 			display: inline-block;
+  			    a{
+  			    	display: block;
+  			    	font-size: 16px;
+  			    	line-height: 55px;
+  			    	padding: 0 12px;
+  			    	&:hover{
+  			    		color: @topbarlinkhovercolor;
+  			    	}
+  			    }
+ 	 		}
+ 	 	}
+ 	 	.vc_wp_search {
+ 	 		border-left: 1px solid #70747c;
+ 	 		border-right: 1px solid #70747c;
+ 	 	}
+ 	 	.widget_search {
+ 	 		padding: 0;
+ 	 		.searchform {
+ 	 			border: none;
+ 	 			height: 55px;
+ 	 			line-height: 55px;
+ 	 			width: 270px;
+ 	 		}
+ 	 		.input_text {
+ 	 			background: none;
+ 	 			color: @topbarlinkcolor;
+ 	 		}
+ 	 		#blogsearchsubmit {
+ 	 			background: none;
+ 	 			color: @topbarlinkcolor;
+ 	 			font-size: 16px;
+ 	 			line-height: 55px;
+ 	 			height: 55px;
+ 	 			&:hover {
+ 	 				color: @topbarlinkhovercolor;
+ 	 			}
+ 	 		}
+ 	 	}
+ 	 	
+ 	 	.header{
+ 	 		padding: 0;
+ 	 		background-image: none;
+ 	 		.horizontal-menu {
+ 	 			text-align: right;
+ 	 		}
+ 	 	}
+ 	}
+}
+
+
+// box-medician-1
+
+.box-medician-1{
+	.vc_custom_heading{
+		font-size: 34px;
+		font-weight: 300;
+		display: inline-block;
+		position: relative;
+		&:after{
+			content: "";
+			display: block;
+			width: 50%;
+			border-bottom: 3px solid @primarycolor;
+			margin: 15px 0;
+		}
+	}
+	.list-text-box{
+		margin: 20px 0 0;
+		ul{
+			li{
+				list-style: none;
+				font-weight: 600;
+				font-family: @headingfont;
+				padding: 6px 0;
+				color: @headingcolor;
+				&:before{
+					content: "\f058";
+					font-family:FontAwesome;
+					margin-right: 10px;
+					font-size: 18px;
+					color: @primarycolor;
+				}
+			}
+		}
+	}
+}
+
+// box-medician
+
+.box-medician{
+	.widget_text{
+		text-align: center;
+		.widgettitle{
+			text-transform: capitalize;
+			font-weight: bold;
+			font-size: 20px;
+			margin: 0 0 15px;
+			display: inline-block;
+			position: relative;
+			&:before{
+				content: "";
+				display: block;
+				border-top: 3px solid @bordercolor;
+				margin: 0 auto 20px;
+				width: 70%;
+			}
+		}
+	}
+}
+
+// corporate-medician
+
+.corporate-medician{
+	p{
+		line-height: 1.4;
+		margin: 5px 0 0;
+	}
+}
+// medician-blog
+.main-container{
+	.corporate-blog.medician-blog{
+		.posts-carousel{
+			.item-col{
+				.post-wrapper{
+					    padding: 40px 0 0;
+					    &:hover{
+					    	.post-info .post-bottom{
+					    		line-height: 40px;
+					    	}
+					    }
+					    .post-info{
+					    	.post-bottom{
+								position: absolute;
+								top: 0;
+								width: 100%;
+								height: 40px;
+								line-height: 40px;
+								.post-date{
+									padding: 0 10px;
+									background-color: @primarycolor;
+									color: #fff;
+									span,.fa{
+										color: #fff;
+									}
+								}
+					    	}
+					    }
+				}
+			}
+		}
+	}
+}
+
+// title-medician1
+.main-container{
+	.title-medician1{
+		text-align: center;
+		.wpb_wrapper{
+			h3,h2{
+				font-size: 34px;
+				font-weight: 300;
+				display: inline-block;
+				position: relative;
+				&:after{
+					content: "";
+					display:block;
+					border-bottom: 2px solid @primarycolor;
+					width: 50%;
+					margin: 20px auto;
+				}
+			}
+		}
+	}
+}
+
+// medician-teams
+.main-container{
+	.medician-teams{
+		.short-biography{
+			text-align: center;
+			padding: 20px 0 0;
+			.name-content{
+				color: @primarycolor;
+				h3,h2{
+					line-height: 1.2;
+					a{
+						font-size: 18px;
+						color: @headingcolor;
+						&:hover{
+							color: @primarycolor;
+						}
+					}
+				}
+			}
+			.social{
+				padding: 15px 0 0 ;
+				border-top: 1px solid @bordercolor;
+				margin: 10px 0 0;
+				opacity: 0;
+				visibility: hidden;
+				-webkit-transition: all 0.4s ease 0s;
+				transition: all 0.4s ease 0s;
+				br{
+					display: none;
+				}
+				a{
+					display: inline-block;
+					color:  @headingcolor;
+					font-size: 0;
+					padding: 0 10px;
+					&:hover{
+						color: @primarycolor;
+					}
+					i{
+						font-size: 16px;
+					}
+				}
+			}
+			&:hover{
+				.social{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+}
+.main-container{
+	.box-medician-2{
+		text-align: center;
+		.wpb_content_element{
+			text-align: center;
+			color: #fff;
+			font-weight: bold;
+			-webkit-transition: background 0.3s ease-in-out;
+			-moz-transition: background 0.3s ease-in-out;
+			-ms-transition: background 0.3s ease-in-out;
+			-o-transition: background 0.3s ease-in-out;
+			transition: background 0.3s ease-in-out;
+			> div{
+				h3,h4{
+					color: #fff;
+					position: relative;
+					display: inline-block;
+					&:after{
+						content: "";
+						display: block;
+						width: 90%;
+						margin: 15px auto;
+						border-bottom: 3px solid #fff;
+					}
+				}
+				i{
+					font-size: 0;
+					&:before{
+						font-size: 60px;
+					}
+				}
+			}
+			&:hover{
+				background-color: #fff;
+				color: #18afd3;
+				> div{
+					h3,h4{
+						color: #18afd3;
+						&:after{
+							border-color: #18afd3;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// medician-contacts
+
+.medician-contacts{
+	background: #3498db; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #15bc9e 50%, #3498db 50%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, #15bc9e 50%, #3498db 50%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, #15bc9e 50%, #3498db 50%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(left, #15bc9e 50%, #3498db 50%); /* Standard syntax */
+	.box-opending{
+		color: #fff;
+		.wpb_wrapper{
+			h3,h4{
+				color: #fff;
+				margin-bottom: 30px;
+				font-size: 18px;
+			}
+			ul{
+				text-align: right;
+				color: @greycolor;
+				li{
+					list-style: none;
+					padding: 10px 0;
+					border-bottom: 1px solid #484848;
+					strong{
+						text-align: left;
+						float: left;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+	.box-times{
+		color: #fff;
+		ul{
+			li{
+				list-style: none;
+				margin-bottom: 15px;
+				i{
+					width: 40px;
+					height: 40px;
+					text-align: center;
+					line-height: 40px;
+					color: #fff;
+					background: #258acd;
+					font-size: 0;
+					margin-right: 15px;
+					&:before{
+						font-size: 14px;
+					}
+				}
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+.medician-contacts2{
+	.box-col{
+		overflow: hidden;
+		margin-bottom: 30px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		&:hover{
+			.pull-left{
+				background: @primarycolor;
+				color: #fff;
+			}
+		}
+		.pull-left{
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			line-height: 100px;
+			border-radius: 100%;
+			margin-right: 25px;
+			border: 2px solid @primarycolor;
+			color: @primarycolor;
+			font-size: 0;
+			i{
+				display: block;
+				line-height: 100px;
+				&:before{
+					font-size: 40px;
+				}
+			}
+		}
+		.media-body{
+			margin-top: 10px;
+			h3,h4{
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+// medician-team-member
+
+.medician-team-member{
+	.wpb_single_image{
+		border: 1px solid darken(@bordercolor, 10%);
+	}
+	.short-biography{
+		padding-left: 30px;
+		.name-content{
+			h3{
+				line-height: 1;
+				a{
+					color: @headingcolor;
+					font-size: 18px;
+					font-family: @headingfont;
+					font-weight: bold;
+					&:hover{
+						color: @primarycolor;
+					}
+				}
+			}
+			.role{
+				color: @primarycolor;
+			}
+		}
+		.social{
+			border-top: 1px solid darken(@bordercolor, 10%);
+			margin-top: 40px;
+			padding: 20px 0 0;
+			br{
+				display: none;
+			}
+			a{
+				display: inline-block;
+				color:  @headingcolor;
+				font-size: 0;
+				padding: 0 10px;
+				&:hover{
+					color: @primarycolor;
+				}
+				i{
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}
+// medician-wpcf7
+
+.medician-wpcf7{
+	.wpcf7{
+		.contact-input{
+			> span{
+				float: left;
+				width: 46%;
+				margin-right: 2%;
+				margin-bottom: 30px;
+				input{
+					background: none;
+					border: 1px solid darken(@bordercolor, 10%);
+					height: 36px;
+					padding-left: 10px;
+					padding-right: 10px;
+					width: 100%;
+				}
+			}
+		}
+		.contact-message{
+			clear: both;
+			width: 94%;
+			margin-bottom: 20px;
+			span{
+				display: block;
+				textarea{
+					width: 100%;
+					height: 150px;
+					border: 1px solid darken(@bordercolor, 10%);
+				}
+			}
+		}
+		.contact-submit{
+			width: 94%;
+			text-align: right;
+		}
+	}
+}
+
+// medician footer
+.footer {
+	&.footer-medician {
+		.social-icons {
+			li {
+				margin-right: 7px;
+				&:last-child {
+					margin-right: 0;
+				}
+				a {
+					color: #fff;
+					display: block;
+					height: 45px;
+					line-height: 45px;
+					padding: 0;
+					text-align: center;
+					width: 45px;
+					border: 2px solid #fff;
+					-webkit-border-radius: 100%;
+					        border-radius: 100%;
+					&:hover {
+						color: @primarycolor;
+						background: #fff;
+					}
+				}
+			}
+		}
+		.newsletter-title {
+			h3 {
+				font-size: 24px;
+				letter-spacing: 0.5px;
+				margin-right: 15px;
+				text-transform: none;
+			}
+		}
+		.widget_wysija_cont {
+			.widget_wysija {
+				background: rgba(255, 255, 255, 0.2);
+				padding: 5px;
+				-webkit-border-radius: 20px;
+				        border-radius: 20px;
+			}
+			.wysija-submit {
+				background: #fff;
+				color: @darkcolor;
+				font-family: @headingfont;
+				font-weight: bold;
+				line-height: 34px;
+				-webkit-border-radius: 20px;
+				        border-radius: 20px;
+				&:hover {
+					color: @primarycolor;
+				}
+			}
+			.wysija-paragraph {
+				.wysija-input {
+					border: none;
+					color: #fff;
+					font-family: @headingfont;
+					font-size: 13px;
+					font-style: normal;
+					font-weight: 500;
+					line-height: 34px;
+					width: 265px;
+				}
+			}
+		}
+		.footer-title {
+			h3 {
+				color: #fff;
+				font-size: 18px;
+				font-weight: 600;
+				letter-spacing: 0.4px;
+				margin-bottom: 45px;
+				position: relative;
+				text-transform: none;
+				&:before {
+					content: "";
+					display: block;
+					width: 100px;
+					height: 2px;
+					background: @primarycolor;
+					position: absolute;
+					bottom: -15px;
+				}
+			}
+		}
+		.widget-copyright {
+			text-align: center;
+		}
+	}	
+}
+
+@media screen and (max-width: 1200px) {
+	.header-container {
+		&.header-medician-1 {
+			.header-text {
+				border-bottom: 1px dotted @bordercolor;
+				text-align: center;
+			}
+			.medician-topbar-right {
+				text-align: center;
+				> .vc_column-inner > .wpb_wrapper {
+					display: inline-block;
+					float: none;
+					vertical-align: middle;
+				}
+			}
+			ul.social-icons {
+				border: none;
+			}
+		}
+		&.header-medician-2 {
+			.header-text {
+				border-bottom: 1px dotted #70747c;
+				text-align: center;
+			}
+			.medician-topbar-right {
+				text-align: center;
+				> .vc_column-inner > .wpb_wrapper {
+					display: inline-block;
+					float: none;
+					vertical-align: middle;
+				}
+			}
+			ul.social-icons {
+				border: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 992px){
+	.header-container {
+		&.header-medician-1 {
+			.logo {
+				padding: 0;
+				text-align: center;
+			}
+		}
+		&.header-medician-2 {
+			.logo {
+				padding: 0;
+				text-align: center;
+			}
+		}
+	}
+	.medician-team-member{
+		.pull-left{
+			float: none !important;
+			border: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 639px) {
+	.header-container {
+		&.header-medician-1 {
+			ul.social-icons {
+				text-align: center;
+				width: 100%;
+			}
+			.vc_wp_search {
+				border: none;
+				width: 100%;
+			}
+		}
+		&.header-medician-2 {
+			ul.social-icons {
+				text-align: center;
+				width: 100%;
+			}
+			.vc_wp_search {
+				border: none;
+				width: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,161 @@
+// Typography
+
+@bodyfont: @body_font, Arial, Helvetica, sans-serif;
+@textcolor: @text_color;
+@textsize: @text_size;
+@textselectedcolor: @text_selected_color;
+@textselectedbg: @text_selected_bg;
+@bordercolor: @border_color;
+
+@headingfont: @heading_font, Arial, Helvetica, sans-serif;
+@headingcolor: @heading_color;
+@headingfontweight: @heading_font_weight;
+
+@menufont: @menu_font, Arial, Helvetica, sans-serif;
+@menucolor: @menu_color;
+@menufontsize: @menu_font_size;
+@menufontweight: @menu_font_weight;
+
+@submenubg: @sub_menu_bg;
+@submenucolor: @sub_menu_color;
+
+@vmenufont: @vmenu_font, Arial, Helvetica, sans-serif;
+@vmenucolor: @vmenu_color;
+@vmenufontsize: @vmenu_font_size;
+@vmenufontweight: @vmenu_font_weight;
+
+@vsubmenubg: @vsub_menu_bg;
+
+@linkcolor: @link_color;
+@linkhovercolor: @link_hover_color;
+@linkactivecolor: @link_active_color;
+
+@pricefont: @price_font, Arial, Helvetica, sans-serif;
+@pricecolor: @price_color;
+@pricesize: @price_size;
+@pricefontweight: @price_font_weight;
+
+
+// Colors
+
+@primarycolor: @primary_color;
+@salecolor: @sale_color;
+@saletextcolor: @saletext_color;
+@ratecolor: @rate_color;
+
+//Topbar
+
+@topbarcolor: @topbar_color;
+@topbarlinkcolor: @topbar_link_color;
+@topbarlinkhovercolor: @topbar_link_hover_color;
+@topbarlinkactivecolor: @topbar_link_active_color;
+
+//Header
+
+@headercolor: @header_color;
+@headerlinkcolor: @header_link_color;
+@headerlinkhovercolor: @header_link_hover_color;
+@headerlinkactivecolor: @header_active_hover_color;
+
+@headerstickybg: @header_sticky_bg;
+
+//Footer
+
+@footercolor: @footer_color;
+@footerlinkcolor: @footer_link_color;
+@footerlinkhovercolor: @footer_link_hover_color;
+@footerlinkactivecolor: @footer_link_active_color;
+
+// Defined colors
+
+@darkcolor: #2f2f2f;
+@greycolor: #999;
+@lightgreycolor: #bababa;
+
+
+.widgettitleMixin() {
+    font-size: 14px;
+    margin: 0 0 25px;
+    text-transform: uppercase;
+}
+
+.buttonMixin() {
+    background: #f4f4f4;
+    border: 2px solid @bordercolor;
+    border-radius: 2px;
+    box-shadow: none;
+    color: @textcolor;
+    display: inline-block;
+    font-family: @headingfont;
+    font-size: 12px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 36px;
+    padding: 0 30px;
+    text-shadow: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    .transition();
+    &:hover {
+        background: @primarycolor;
+        border-color: @primarycolor;
+        color: #fff;
+    }
+}
+.priceMixin() {
+    color: @pricecolor;
+    font-family: @pricefont;
+    font-size: @pricesize;
+    font-weight: @pricefontweight;
+}
+.noneTextSelect() {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+       -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
+            user-select: none;          /* Likely future */
+}
+
+.transition (@transition: .4s) {
+    -webkit-transition: all @transition ease-out;
+       -moz-transition: all @transition ease-out;
+        -ms-transition: all @transition ease-out;
+         -o-transition: all @transition ease-out;
+}
+
+.scale (@factor) {
+    -webkit-transform: scale(@factor);
+       -moz-transform: scale(@factor);
+        -ms-transform: scale(@factor);
+         -o-transform: scale(@factor);
+}
+.scaleY (@factor) {
+    -webkit-transform: scaleY(@factor);
+       -moz-transform: scaleY(@factor);
+        -ms-transform: scaleYscaleY(@factor);
+         -o-transform: scaleY(@factor);
+}
+.opacity (@opacity) {
+            opacity: @opacity;
+
+    -webkit-opacity: @opacity;
+       -moz-opacity: @opacity;
+}
+.rotate (@deg) {
+    -webkit-transform: rotate(@deg);
+       -moz-transform: rotate(@deg);
+        -ms-transform: rotate(@deg);
+         -o-transform: rotate(@deg);
+}
+.translate (@x, @y:0) {
+    -webkit-transform: translate(@x, @y);
+       -moz-transform: translate(@x, @y);
+        -ms-transform: translate(@x, @y);
+         -o-transform: translate(@x, @y);
+}
+
+.bg_gradient (@bottom, @left) {
+    background:         linear-gradient(bottom left, @bottom, @left);
+    background: -webkit-linear-gradient(bottom left, @bottom, @left);
+    background:    -moz-linear-gradient(bottom left, @bottom, @left);
+    background:      -o-linear-gradient(bottom left, @bottom, @left);
+}
