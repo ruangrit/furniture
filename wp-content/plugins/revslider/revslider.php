@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Slider Revolution
-Plugin URI: http://revolution.themepunch.com/
+Plugin URI: https://revolution.themepunch.com/
 Description: Slider Revolution - Premium responsive slider
 Author: ThemePunch
-Version: 5.2.6
-Author URI: http://themepunch.com
+Version: 5.4.8.3
+Author URI: https://themepunch.com
 */
 
 // If this file is called directly, abort.
@@ -17,22 +17,22 @@ if(class_exists('RevSliderFront')) {
 	die('ERROR: It looks like you have more than one instance of Slider Revolution installed. Please remove additional instances for this plugin to work again.');
 }
 
-$revSliderVersion = "5.2.6";
-$revSliderAsTheme = false;
-$revslider_screens = array();
-$revslider_fonts = array();
-
-$rs_plugin_url = str_replace('index.php','',plugins_url( 'index.php', __FILE__ ));
+$revSliderVersion	= '5.4.8.3';
+$revSliderAsTheme	= false;
+$revslider_screens	= array();
+$revslider_fonts	= array();
+$rs_plugin_url		= str_replace('index.php','',plugins_url( 'index.php', __FILE__ ));
 if(strpos($rs_plugin_url, 'http') === false) {
-	$site_url = get_site_url();
-	$rs_plugin_url = (substr($site_url, -1) === '/') ? substr($site_url, 0, -1). $rs_plugin_url : $site_url. $rs_plugin_url;
+	$site_url		= get_site_url();
+	$rs_plugin_url	= (substr($site_url, -1) === '/') ? substr($site_url, 0, -1). $rs_plugin_url : $site_url. $rs_plugin_url;
 }
+$rs_plugin_url		= str_replace(array(chr(10), chr(13)), '', $rs_plugin_url);
 
-define( 'RS_PLUGIN_PATH', plugin_dir_path(__FILE__) );
-define( 'RS_PLUGIN_FILE_PATH', __FILE__ );
-define( 'RS_PLUGIN_URL', $rs_plugin_url);
-
-define( 'RS_DEMO', false );
+define('RS_PLUGIN_PATH',		plugin_dir_path(__FILE__));
+define('RS_PLUGIN_FILE_PATH',	__FILE__);
+define('RS_PLUGIN_URL',			$rs_plugin_url);
+define('RS_PLUGIN_SLUG',		apply_filters('set_revslider_slug', 'revslider'));
+define('RS_DEMO',				false);
 
 if(isset($_GET['revSliderAsTheme'])){
 	if($_GET['revSliderAsTheme'] == 'true'){
@@ -72,16 +72,23 @@ require_once(RS_PLUGIN_PATH . 'includes/output.class.php');
 require_once(RS_PLUGIN_PATH . 'includes/slide.class.php');
 require_once(RS_PLUGIN_PATH . 'includes/widget.class.php');
 require_once(RS_PLUGIN_PATH . 'includes/navigation.class.php');
+require_once(RS_PLUGIN_PATH . 'includes/object-library.class.php');
 require_once(RS_PLUGIN_PATH . 'includes/template.class.php');
 require_once(RS_PLUGIN_PATH . 'includes/external-sources.class.php');
+require_once(RS_PLUGIN_PATH . 'includes/page-template.class.php');
 
 require_once(RS_PLUGIN_PATH . 'includes/tinybox.class.php');
 require_once(RS_PLUGIN_PATH . 'includes/extension.class.php');
 require_once(RS_PLUGIN_PATH . 'public/revslider-front.class.php');
 
 try{
+	$rs_rsl	= (isset($_GET['rs_refresh_server'])) ? true : false;
+	$rslb	= new RevSliderLoadBalancer();
+	$GLOBALS['rslb'] = $rslb;
+	$rslb->refresh_server_list($rs_rsl);
+	
 	//register the revolution slider widget
-	RevSliderFunctionsWP::registerWidget("RevSliderWidget");
+	RevSliderFunctionsWP::registerWidget('RevSliderWidget');
 
 	//add shortcode
 	function rev_slider_shortcode($args, $mid_content = null){
@@ -152,6 +159,7 @@ try{
 	$revext = new RevSliderExtension();
 	
 	add_action('plugins_loaded', array( 'RevSliderTinyBox', 'visual_composer_include' )); //VC functionality
+	add_action('plugins_loaded', array( 'RevSliderPageTemplate', 'get_instance' ));
 	
 	if(is_admin()){ //load admin part
 	
@@ -220,6 +228,7 @@ try{
 	
 	add_action('plugins_loaded', array( 'RevSliderFront', 'createDBTables' )); //add update checks
 	add_action('plugins_loaded', array( 'RevSliderPluginUpdate', 'do_update_checks' )); //add update checks
+	add_action('plugins_loaded', array( 'RevSliderWpml', 'add_hooks' ));
 	
 }catch(Exception $e){
 	$message = $e->getMessage();

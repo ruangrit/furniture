@@ -11,21 +11,21 @@ body {
   color: #ffffff;
 }
 a {
-  color: #a43d21;
+  color: #ffffff;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
 a:hover {
-  color: #ee9c9c;
+  color: #eeeeee;
   text-decoration: none;
 }
 a:focus {
-  color: #ee9c9c;
+  color: #eeeeee;
   outline: none;
   text-decoration: none;
 }
 a:active {
-  color: #ee9c9c;
+  color: #eeeeee;
 }
 img {
   max-width: 100%;
@@ -37,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #353535;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif;
   font-weight: 700;
   line-height: 1.35;

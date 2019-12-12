@@ -189,7 +189,6 @@ class RevSliderFunctionsWP {
 	 *
 	 * @return boolean True on success, false on failure
 	 */
-
 	public static function import_media($file_url, $folder_name) {
 		require_once(ABSPATH . 'wp-admin/includes/image.php');
 		
@@ -249,12 +248,18 @@ class RevSliderFunctionsWP {
 			return false;
 		}
 	}
+	
+	
 	/**
 	 * 
 	 * register widget (must be class)
 	 */
 	public static function registerWidget($widgetName){
-		add_action('widgets_init', create_function('', 'return register_widget("'.$widgetName.'");'));
+		add_action('widgets_init', array('RevSliderFunctionsWP', 'revSliderRegisterWidget'));
+	}
+	
+	public static function revSliderRegisterWidget(){
+	   register_widget( 'RevSliderWidget' );
 	}
 
 	/**
@@ -476,7 +481,7 @@ class RevSliderFunctionsWP {
 	 * get posts by some category
 	 * could be multiple
 	 */
-	public static function getPostsByCategory($slider_id,$catID,$sortBy = self::SORTBY_ID,$direction = self::ORDER_DIRECTION_DESC,$numPosts=-1,$postTypes="any",$taxonomies="category",$arrAddition = array()){
+	public static function getPostsByCategory($slider_id,$catID,$sortBy = self::SORTBY_ID,$direction = self::ORDER_DIRECTION_DESC,$numPosts=-1,$postTypes="any",$taxonomies="category",$arrAddition = array(), $tax_addition = array()){
 		
 		//get post types
 		if(strpos($postTypes,",") !== false){
@@ -496,7 +501,8 @@ class RevSliderFunctionsWP {
 		if(RevSliderWpml::isWpmlExists()){ //translate categories to languages
 			$newcat = array();
 			foreach($catID as $id){
-				$newcat[] = icl_object_id($id, 'category', true);
+				//$newcat[] = icl_object_id($id, 'category', true);
+				$newcat[] = apply_filters( 'wpml_object_id', $id, 'category', true );
 			}
 			$catID = $newcat;
 		}
@@ -557,6 +563,16 @@ class RevSliderFunctionsWP {
 			$query['tax_query'] = $taxQuery;
 		} //if exists taxanomies
 		
+		if(!empty($tax_addition)){
+			
+			if(!isset($query['tax_query'])) $query['tax_query'] = array();
+			
+			foreach($tax_addition as $tak => $tav){
+				$query['tax_query'][] = $tav;
+			}
+			
+			$query['tax_query']['relation'] = 'AND';
+		}
 		
 		if(!empty($arrAddition))
 			$query = array_merge($query, $arrAddition);
@@ -566,7 +582,6 @@ class RevSliderFunctionsWP {
 		$objQuery = new WP_Query($query);
 
 		$arrPosts = $objQuery->posts;
-
 		
 		foreach($arrPosts as $key=>$post){
 			
@@ -782,21 +797,21 @@ class RevSliderFunctionsWP {
 	 * get excerpt from post id
 	 */
 	public static function getExcerptById($postID, $limit=55){
-		
-		 $post = get_post($postID);	
-		 
-		 $excerpt = $post->post_excerpt;
-		 $excerpt = trim($excerpt);
-		 
-		 $excerpt = trim($excerpt);
-		 if(empty($excerpt))
-			$excerpt = $post->post_content;			 
-		 
-		 $excerpt = strip_tags($excerpt,"<b><br><br/><i><strong><small>");
-		 
-		 $excerpt = RevSliderFunctions::getTextIntro($excerpt, $limit);
-		 
-		 return $excerpt;
+
+		$post = get_post($postID);	
+
+		$excerpt = $post->post_excerpt;
+		$excerpt = trim($excerpt);
+
+		$excerpt = trim($excerpt);
+		if(empty($excerpt))
+		$excerpt = $post->post_content;			 
+
+		$excerpt = strip_tags($excerpt,"<b><br><br/><i><strong><small>");
+
+		$excerpt = RevSliderFunctions::getTextIntro($excerpt, $limit);
+
+		return apply_filters('revslider_getExcerptById', $excerpt, $post, $limit);
 	}		
 	
 	
@@ -811,6 +826,39 @@ class RevSliderFunctionsWP {
 		return($displayName);
 	}
 	
+	/**
+	 * 
+	 * get user avatar from user id
+	 */
+	public static function getUserAvatarUrl($userID){
+		
+		$avatar =  get_avatar_url($userID,array("size"=>"80"));
+		
+		return($avatar);
+	}
+
+	/**
+	 * 
+	 * get user posts page from user id
+	 */
+	public static function getUserPostsPage($userID){
+		
+		$link =  get_author_posts_url($userID);
+		
+		return($link);
+	}
+
+	/**
+	 * 
+	 * get user page from user id
+	 */
+	public static function getUserPage($userID){
+		
+		$curauth = get_user_by('ID', $userID);
+		$user_url = $curauth->user_url;
+		
+		return($user_url);
+	}
 	
 	/**
 	 * 

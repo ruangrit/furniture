@@ -7,7 +7,7 @@
 	$(document).ready(function(){
 		//hover toggles buttons
 		
-			$(".rs-addon-activated").hover(function () {
+			/*$(".rs-addon-activated").hover(function () {
 				$this = $(this);
 			    $this.data("original",$this.html());
 			    $this.removeClass('rs-status-green').addClass('rs-status-orange').html($this.data('alternative'));
@@ -32,6 +32,10 @@
 			}, function () {
 				$this = $(this);
 			    $this.removeClass('rs-status-green').addClass('rs-status-red').html($this.data("original"));
+			});*/
+
+			$('.rs-reload-shop,#rev_check_version').click(function(){
+				showWaitAMinute({fadeIn:300,text:rev_slider_addon.please_wait_a_moment});
 			});
 		
 		//click event to install plugin
@@ -48,7 +52,6 @@
 					plugin: $this.data("plugin")
 				},
 				success : function( response ) {
-					//console.log(response);
 					switch(response){
 						case "0":
 								showWaitAMinute({fadeOut:300,text:rev_slider_addon.please_wait_a_moment});
@@ -76,7 +79,6 @@
 
 		//click event to activate plugin
 			$(".rs-addon-not-activated").click(function(){
-				console.log("activate process");
 				showWaitAMinute({fadeIn:300,text:rev_slider_addon.please_wait_a_moment});
 				
 				$this = $(this);
@@ -109,7 +111,7 @@
 		}); // End Click
 
 		//click event to deactivate plugin
-			$(".rs-addon-activated").click(function(){
+			$(".rs-dash-deactivate-addon").click(function(){
 				showWaitAMinute({fadeIn:300,text:rev_slider_addon.please_wait_a_moment});
 				$this = $(this);
 				//console.log("deactivate process");
@@ -144,8 +146,11 @@
 
 })( jQuery );
 
+
+if (showWaitAMinute===undefined)
 function showWaitAMinute(obj) {
 		var wm = jQuery('#waitaminute');		
+		
 		// SHOW AND HIDE WITH DELAY
 		if (obj.delay!=undefined) {
 
@@ -184,4 +189,6 @@ function showWaitAMinute(obj) {
 				break;	
 			}
 		}
-	}
+	 }
+
+

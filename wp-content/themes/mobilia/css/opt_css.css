@@ -1,0 +1,132 @@
+.header-container .header .horizontal-menu .primary-menu-container ul.nav-menu li.current-menu-item > a,
+.header-container .header .horizontal-menu .primary-menu-container ul.nav-menu li.current-menu-ancestor > a,
+.header-container .header .horizontal-menu .primary-menu-container ul.nav-menu li.current-menu-parent > a {
+  color: #FFFFFF !important;
+}
+.header-container .header .horizontal-menu .primary-menu-container ul.nav-menu li:hover > a,
+.header-container .header .horizontal-menu .primary-menu-container ul.nav-menu li.sfHover > a {
+  color: #EEEEEE !important;
+}
+
+.header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li:hover > a.item_link .link_text,
+.header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li:hover > a.item_link i {
+  color: #FFFFFF !important;
+}
+.header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li.current-menu-ancestor:hover > a.item_link .link_text,
+.header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li.current-menu-item:hover > a.item_link .link_text {
+  color: #FFFFFF !important;
+}
+.header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li.current-menu-ancestor:hover > a.item_link i,
+.header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li.current-menu-item:hover > a.item_link i {
+  color: #FFFFFF !important;
+}
+.header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li.current-menu-ancestor > a.item_link .link_text,
+.header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li.current-menu-item > a.item_link .link_text {
+  color: #FFFFFF !important;
+}
+.header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li.current-menu-ancestor > a.item_link i,
+.header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li.current-menu-item > a.item_link i {
+  color: #FFFFFF !important;
+}
+
+.vc_custom_1464935166594 {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 10px;
+}
+
+.vc_custom_1463536833206 {
+   padding-bottom: 40px;
+   padding-top: 40px;
+}
+
+.wysija-paragraph input {
+    background: #fff !important;
+    border: 1px solid #fff !important;
+}
+
+.add-to-cart, .price-box, .add-to-links, .price-box, .cart, .yith-wcwl-add-to-wishlist, .compare {
+    
+    display: none !important;
+}
+
+.vc_tta-panel-body {
+   padding: 0px !important; 
+
+}
+.vc_tta-panels {
+    border: none !important;
+}
+
+.vc_active > a {
+ 
+  background: #aaa !important;
+  
+  
+}
+
+.vc_tta-tab > a {
+  color: #FFF !important;
+  border-radius: 0px !important;
+  padding: 5px 15px !important;
+  font-family: 'gotham', sans-serif !important;
+  letter-spacing: 0px !important;
+}
+
+.vc_tta-tabs-list {
+    margin-bottom: 20px !important;
+    
+}
+
+@font-face {
+    font-family: 'baskervillebt';
+    src: url('/wp-content/themes/mobilia/dev-font/BaskervilleBT-Bold.woff2') format('woff2'),
+         url('/wp-content/themes/mobilia/dev-font/BaskervilleBT-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'baskervillebt';
+    src: url('/wp-content/themes/mobilia/dev-font/baskervillebt-webfont.woff2') format('woff2'),
+         url('/wp-content/themes/mobilia/dev-font/baskervillebt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gotham';
+    src: url('/wp-content/themes/mobilia/dev-font/Gotham-Medium.woff2') format('woff2'),
+         url('/wp-content/themes/mobilia/dev-font/Gotham-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.font-box2 h3 {
+    font-family: 'baskervillebt', sans-serif !important;
+    font-size: 28.5px !important;
+}
+
+.font-box2 p {
+    font-family: 'baskervillebt', sans-serif !important;
+    letter-spacing: 0px !important;
+    font-size: 13px !important;
+
+}
+
+h1, h2, h3, h4, h5,  {
+    font-family: 'gotham', sans-serif;
+    letter-spacing: 0px !important;
+}
+
+.header-container .header .horizontal-menu #mega_main_menu_first > .menu_holder .menu_inner > ul > li > a.item_link .link_text {
+    font-family: 'gotham', sans-serif;
+    letter-spacing: 0px !important;
+    text-transform: none;
+    font-size: 14.5px;
+}
+.header-text p {
+    font-family: 'gotham', sans-serif;
+    letter-spacing: 0px !important;
+    font-size: 13px !important;
+}
+.horizontal-menu {
+    text-align: right !important;
+}

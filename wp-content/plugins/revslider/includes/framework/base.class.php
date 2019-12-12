@@ -129,7 +129,7 @@ class RevSliderBase {
 			
 		}catch (Exception $e){
 			header("status: 500");
-			echo $e->getMessage();
+			echo __('Image not Found', 'revslider');
 			exit();
 		}
 	}
@@ -291,17 +291,16 @@ class RevSliderBase {
 		global $wpdb;
 		
 		$attachment_id = 0;
-		
+		// If there is no url, return.
+		if('' == $image_url || !$image_url)
+			return $attachment_id;
+			
 		if(function_exists('attachment_url_to_postid')){
 			$attachment_id = attachment_url_to_postid($image_url); //0 if failed
 		}
 		if ( 0 == $attachment_id ){ //try to get it old school way
 			//for WP < 4.0.0
 			$attachment_id = false;
-
-			// If there is no url, return.
-			if ( '' == $image_url )
-				return;
 
 			// Get the upload directory paths
 			$upload_dir_paths = wp_upload_dir();
@@ -356,6 +355,7 @@ class RevSliderBase {
 		$svg_sets['Places'] = array('path' => $path.'places/', 'url' => $url.'places/');
 		$svg_sets['Social'] = array('path' => $path.'social/', 'url' => $url.'social/');
 		$svg_sets['Toggle'] = array('path' => $path.'toggle/', 'url' => $url.'toggle/');
+		
 		
 		$svg_sets = apply_filters('revslider_get_svg_sets', $svg_sets);
 		
@@ -567,14 +567,21 @@ class RevSliderBase {
 				}
 				
 				if(!$zimage){
-					echo $image.__(' not found!<br>', 'revslider');
+					//echo $image.__(' not found!<br>', 'revslider');
 				}else{
 					if(!isset($alreadyImported['images/'.$image])){
-						if($strip == true){ //pclzip
-							$importImage = RevSliderFunctionsWP::import_media($d_path.str_replace('//', '/', 'images/'.$image), $alias.'/');
+						//check if we are object folder, if yes, do not import into media library but add it to the object folder
+						$uimg = ($strip == true) ? str_replace('//', '/', 'images/'.$image) : $image; //pclzip
+						
+						$object_library = (strpos($uimg, 'revslider/objects/') === 0) ? true : false;
+						
+						if($object_library === true){ //copy the image to the objects folder if false
+							$objlib = new RevSliderObjectLibrary();
+							$importImage = $objlib->_import_object($d_path.'images/'.$uimg);
 						}else{
-							$importImage = RevSliderFunctionsWP::import_media($d_path.'images/'.$image, $alias.'/');
+							$importImage = RevSliderFunctionsWP::import_media($d_path.'images/'.$uimg, $alias.'/');
 						}
+						
 						if($importImage !== false){
 							$alreadyImported['images/'.$image] = $importImage['path'];
 							
@@ -612,6 +619,7 @@ class RevSliderBase {
 		}
 	}
 	
+	
 	/**
 	 * prints out debug text if constant TP_DEBUG is defined and true
  	 * @since: 5.2.4
@@ -637,7 +645,7 @@ class RevSliderBase {
 			return false;
 		}
 	}
-	
+
 }
 
 /**

@@ -9,16 +9,14 @@ if( !defined( 'ABSPATH') ) exit();
 
 class RevSliderWpml{
 	
+	private static $sitepress;
+	
 	/**
 	 * 
 	 * true / false if the wpml plugin exists
 	 */
 	public static function isWpmlExists(){
-		// TODO wpml_is_active API call needed
-		if(class_exists("SitePress"))
-			return(true);
-		else
-			return(false);
+		return did_action( 'wpml_loaded' );
 	}
 	
 	/**
@@ -38,11 +36,7 @@ class RevSliderWpml{
 		
 		self::validateWpmlExists();
 		
-		$wpml = new SitePress();
 		$arrLangs = apply_filters( 'wpml_active_languages', array() );
-		/* OLD:
-		$arrLangs = $wpml->get_active_languages();
-		*/
 		
 		$response = array();
 		
@@ -70,11 +64,8 @@ class RevSliderWpml{
 			
 		self::validateWpmlExists();
 		
-		$wpml = new SitePress();
 		$arrLangs = apply_filters( 'wpml_active_languages', array() );
-		/* OLD:
-		$arrLangs = $wpml->get_active_languages();
-		*/
+		
 		foreach($arrLangs as $code=>$arr){
 			$arrCodes[$code] = $code;
 		}
@@ -101,9 +92,6 @@ class RevSliderWpml{
 	 */
 	public static function getLangsWithFlagsHtmlList($props = "",$htmlBefore = ""){
 		
-		/* NEW:
-		$arrLangs = apply_filters( 'wpml_active_languages', array() );
-		*/
 		$arrLangs = self::getArrLanguages();
 		
 		if(!empty($props))
@@ -141,15 +129,6 @@ class RevSliderWpml{
 		
 		self::validateWpmlExists();
 		
-		$wpml = new SitePress();
-		
-		/* OLD:
-		if(empty($code) || $code == "all")
-			$url = RS_PLUGIN_URL.'admin/assets/images/icon-all.png';
-		else
-			$url = $wpml->get_flag_url($code);
-		*/
-
 		if ( empty( $code ) || $code == "all" ) {
             $url = RS_PLUGIN_URL.'admin/assets/images/icon-all.png'; // NEW: ICL_PLUGIN_URL . '/res/img/icon16.png';
         } else {
@@ -168,40 +147,11 @@ class RevSliderWpml{
 	
 	
 	/**
-	 * get language details by code
-	 */
-	private function getLangDetails($code){
-		global $wpdb;
-		
-		$details = $wpdb->get_row("SELECT * FROM ".$wpdb->prefix."icl_languages WHERE code='$code'");
-		
-		if(!empty($details))
-			$details = (array)$details;
-		
-		return($details);
-	}
-	
-	
-	/**
 	 * 
 	 * get language title by code
 	 */
 	public static function getLangTitle($code){
-		/* OLD: 
-		$langs = self::getArrLanguages();
-		
-		if($code == "all")
-			return(__("All Languages", 'revslider'));
-		
-		if(array_key_exists($code, $langs))
-			return($langs[$code]);
-			
-		$details = self::getLangDetails($code);
-		if(!empty($details))			
-			return($details["english_name"]);
-		
-		return("");
-		*/
+
 		if($code == "all")
 			return(__("All Languages", 'revslider'));
 		
@@ -216,15 +166,6 @@ class RevSliderWpml{
 	 */
 	public static function getCurrentLang(){
 		self::validateWpmlExists();
-		$wpml = new SitePress();
-
-		
-		/* OLD:
-		if(is_admin())
-			$lang = $wpml->get_default_language();
-		else
-			$lang = RevSliderFunctionsWP::getCurrentLangCode();
-		*/
 		
 		if ( is_admin() ) {
             return apply_filters( 'wpml_default_language', null );
@@ -232,6 +173,48 @@ class RevSliderWpml{
         return apply_filters( 'wpml_current_language', null );
 		
 		return($lang);
+	}
+	
+	
+	public static function svg_val_filter( $svg_val ) {
+
+		$current_language = apply_filters( 'wpml_current_language', null );
+
+		if ( is_array( $svg_val ) && array_key_exists( 'src', $svg_val )
+		     && $current_language != apply_filters( 'wpml_default_language', null )
+		     && apply_filters( 'wpml_setting', null, 'language_negotiation_type' ) == 2
+		) {
+
+			$svg_val['src'] = self::convert_url( $svg_val['src'], $current_language );
+
+		}
+
+		return $svg_val;
+	}
+
+	public static function convert_url( $url, $language ){
+
+		if ( self::$sitepress instanceof SitePress ) {
+			$url = self::$sitepress->convert_url( $url, $language );
+		}
+
+		return $url;
+	}
+
+	private static function set_sitepress() {
+
+		if ( ! self::$sitepress instanceof SitePress ) {
+			global $sitepress;
+			self::$sitepress = $sitepress;
+		}
+	}
+
+	public static function add_hooks() {
+
+		if ( self::isWpmlExists() ) {
+			self::set_sitepress();
+			add_filter( 'revslider_svg_val', array( 'RevSliderWpml', 'svg_val_filter' ) );
+		}
 	}
 }
 

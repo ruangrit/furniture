@@ -429,7 +429,7 @@ body.quickview {
 }
 .quickview-wrapper #quickview-content .product-info .quick-add-to-cart .cart .quantity .input-text {
   border: none;
-  color: #838383;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: normal;
@@ -441,7 +441,7 @@ body.quickview {
   border: 2px solid #f1f0f0;
   border-radius: 2px;
   box-shadow: none;
-  color: #838383;
+  color: #ffffff;
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -478,7 +478,7 @@ body.quickview {
   text-align: left;
 }
 .quickview-wrapper #quickview-content .product-info .quick-add-to-cart .cart .variations .label label {
-  color: #838383;
+  color: #ffffff;
   font-weight: normal;
   line-height: 27px;
   margin: 0;
@@ -499,7 +499,7 @@ body.quickview {
   width: 100%;
 }
 .quickview-wrapper #quickview-content .product-info .quick-add-to-cart .cart .single_variation .price {
-  color: #838383;
+  color: #ffffff;
 }
 .quickview-wrapper #quickview-content .product-info .quick-add-to-cart .cart .single_variation .price del {
   color: #999;
@@ -1000,7 +1000,7 @@ body.quickview {
   text-transform: capitalize;
 }
 .main-container .shop-products .item-col .product-wrapper h2.product-name a {
-  color: #838383;
+  color: #ffffff;
 }
 .main-container .shop-products .item-col .product-wrapper h2.product-name a:hover {
   color: #000000;
@@ -1034,7 +1034,7 @@ body.quickview {
 .main-container .shop-products .item-col .product-wrapper .add-to-cart .add_to_cart_inline a.button:hover,
 .main-container .shop-products .item-col .product-wrapper .add-to-cart .add_to_cart_inline a.button.added {
   background: none;
-  color: #a43d21;
+  color: #ffffff;
 }
 .main-container .shop-products .item-col .product-wrapper .add-to-cart .add_to_cart_inline a.added_to_cart {
   display: none;
@@ -1521,7 +1521,7 @@ body.quickview {
   margin: 0;
 }
 .main-container .product-view .summary.single-product-info .stock {
-  color: #838383;
+  color: #ffffff;
   float: left;
   font-size: 12px;
   font-weight: bold;
@@ -1556,7 +1556,7 @@ body.quickview {
   width: 100%;
 }
 .main-container .product-view .summary.single-product-info .cart .variations .label {
-  color: #353535;
+  color: #ffffff;
   float: left;
   font-size: 14px;
   margin: 0 0 10px;
@@ -1591,9 +1591,9 @@ body.quickview {
   float: left;
 }
 .main-container .product-view .summary.single-product-info .cart .single_variation_wrap .price {
-  border-bottom: 2px solid #353535;
-  border-top: 2px solid #353535;
-  color: #353535;
+  border-bottom: 2px solid #ffffff;
+  border-top: 2px solid #ffffff;
+  color: #ffffff;
   float: left;
   font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif;
   font-size: 26px;
@@ -1628,7 +1628,7 @@ body.quickview {
 .main-container .product-view .summary.single-product-info .cart .quantity .input-text {
   background: none;
   border: none;
-  color: #353535;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 400;
@@ -1657,8 +1657,8 @@ body.quickview {
   text-indent: 0;
 }
 .main-container .product-view .summary.single-product-info .cart .button:hover {
-  background: #838383;
-  border-color: #838383;
+  background: #ffffff;
+  border-color: #ffffff;
 }
 .main-container .product-view .summary.single-product-info .cart .group_table .quantity-row {
   float: left;
@@ -1764,7 +1764,7 @@ body.quickview {
 .main-container .product-view .summary.single-product-info .product_meta .sku_wrapper,
 .main-container .product-view .summary.single-product-info .product_meta .posted_in,
 .main-container .product-view .summary.single-product-info .product_meta .tagged_as {
-  color: #353535;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif;
   font-weight: 700;
   margin-right: 10px;
@@ -1781,7 +1781,7 @@ body.quickview {
 .main-container .product-view .summary.single-product-info .product_meta .posted_in span,
 .main-container .product-view .summary.single-product-info .product_meta .tagged_as a,
 .main-container .product-view .summary.single-product-info .product_meta .tagged_as span {
-  color: #838383;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif;
   font-weight: 400;
   text-transform: none;
@@ -1828,7 +1828,7 @@ body.quickview {
   position: relative;
 }
 .main-container .product-view .single-product-sharing ul.social-icons li a {
-  color: #838383;
+  color: #ffffff;
   display: block;
   line-height: 33px;
   text-align: center;
@@ -1952,7 +1952,7 @@ body.quickview {
   border-top: 1px solid #f1f0f0;
 }
 .main-container .product-view .product .woocommerce-tabs .panel .shop_attributes th {
-  color: #353535;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif;
   font-size: 12px;
   font-weight: normal;
@@ -2071,7 +2071,7 @@ body.quickview {
   border: 2px solid #f1f0f0;
   border-radius: 2px;
   box-shadow: none;
-  color: #838383;
+  color: #ffffff;
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -2225,7 +2225,7 @@ body.quickview {
   font-size: 16px;
 }
 .main-container .shop_table td.product-name .variation {
-  color: #838383;
+  color: #ffffff;
   font-size: 12px;
   margin: 5px 0 0;
 }
@@ -2270,7 +2270,7 @@ body.quickview {
   background: none;
   border: 3px solid #f1f0f0;
   border-radius: 0;
-  color: #838383;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: normal;
@@ -2535,7 +2535,7 @@ body.quickview {
 }
 .main-container .woocommerce-checkout .woocommerce-billing-fields label,
 .main-container .woocommerce-checkout .woocommerce-shipping-fields label {
-  color: #353535;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif;
   margin: 0 0 5px;
 }
@@ -2665,14 +2665,14 @@ body.quickview {
   width: 170px;
 }
 .main-container .checkout_coupon .button {
-  background: #353535;
+  background: #ffffff;
   border: none;
   border-radius: 0;
   color: #fff;
   margin-left: 6px;
 }
 .main-container .checkout_coupon .button:hover {
-  background: #1c1c1c;
+  background: #e6e6e6;
 }
 .main-container .checkout-login form.login {
   background: #fff;

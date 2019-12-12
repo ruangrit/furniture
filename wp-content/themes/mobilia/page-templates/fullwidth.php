@@ -20,11 +20,6 @@ get_header();
 				<?php get_template_part( 'content', 'page' ); ?>
 			<?php endwhile; ?>
 		</div>
-		<div class="brands-logo other-page">
-			<div class="container">
-			<?php echo do_shortcode('[ourbrands]'); ?>
-			</div>
-		</div>
 		<div class="home-static3 other-page">
 			<div class="container">
 				<?php if(isset($mobilia_opt['static_block3'])) {
